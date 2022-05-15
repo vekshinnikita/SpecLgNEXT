@@ -1,0 +1,6 @@
+postgres-data
+.vscode
+.idea
+node_modules
+env
+.env.db
