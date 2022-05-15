@@ -1,0 +1,153 @@
+
+
+.castom-input{
+    color: #000000;
+    border: 1px solid #cdd8d1;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    padding: 0 35px 0 20px!important;
+    height: 50px;
+    box-sizing: border-box;
+    margin-bottom: 15px!important;
+    div{
+        width: 100%;
+        display: flex!important;
+        align-items: center;
+        flex: 1;
+        div{
+            display: flex;
+            font-size: 1em;
+            
+        }
+        div::before{
+            border: none;
+
+        }
+        
+    @media (hover: hover) and (pointer: fine) {
+        div:hover::before{
+            border: none!important;
+        }
+        &:hover::before{
+        opacity: 1;
+    }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        div:active::before{
+            border: none!important;
+        }
+        &:active::before{
+        opacity: 1;
+    }
+    }
+    }
+}
+.MuiPhoneNumber-flagButton{
+    padding-left: 0!important;
+    svg{
+        height: 60%;
+    }
+    ::before{
+        padding-left: 0!important;
+    }
+}
+.location-input{
+    position: relative;
+}
+.location-input::before{
+    font-family: "Font Awesome 6 Free" ;
+    font-weight: 900;
+    content: '\f3c5';
+}
+.volume-input::before{
+    font-weight: 500;
+    content: 'м³';
+}
+.weigh-input::before{
+    font-weight: 500;
+    content: 'кг';
+}
+.location-input::before, .volume-input::before, .weigh-input::before{
+    font-size: 16px;
+    position: absolute;
+    color: #789683;
+    height: 100%;
+    right: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-section-calc-price{
+    width: 400px;   
+    
+    @media(max-width: 980px){
+        display: none;
+    }
+}
+.calc-price-title, .calc-price-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: 900;
+    background-color: $colorHoverA;
+}
+.calc-price-title{
+    background-color: $colorHoverA;
+}
+.calc-price-button{
+    background-color: #059967;
+    cursor: pointer;
+}
+.calc-price{
+    padding: 15px;
+    background-color: #eeeeee;
+    color: #000000;
+    
+    p{
+        font-size: 0.75em;
+        font-weight: 500;
+    }
+}
+
+.main-section-calc-price-mobile{
+    display: none;
+
+    @media(max-width: 980px){
+        display: block;
+    }
+}
+.required-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    max-width: 40%;
+    font-size: 13px;
+    color: red;   
+    position: absolute;
+    bottom: -82%;
+    left:0;
+    z-index: 10;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 2px 11px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px 2px 11px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 11px 2px rgba(34, 60, 80, 0.2);
+
+    &:after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: solid transparent;
+        border-width: 6px;
+        top: -12px;
+        left: 15%;
+        border-bottom-color: #fff;
+    }
+}

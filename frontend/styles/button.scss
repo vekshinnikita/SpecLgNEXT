@@ -1,0 +1,123 @@
+.btn-close{
+    position: fixed;
+    right: 10px;
+    height: 45px;
+    width: 45px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    transition: ease .4s all;
+    opacity: 0;
+    z-index: 50;
+    pointer-events: none;
+    cursor: pointer;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            color: $colorHoverA;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active{
+            color: $colorHoverA;
+        }
+    }
+    @media(max-width: 450px){
+        color: #000;
+    }
+}
+.btn-close-active{
+    opacity: 1;
+    pointer-events: all;
+}
+.button{
+    position: relative; 
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: ease .4s all;
+        opacity: 0;
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover::before{
+            opacity: 1;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active::before{
+            opacity: 1;
+        }
+    }
+}
+.btn-order{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #577d66;
+    color: #fff;
+    transition: .2s all ease;
+    cursor: pointer;
+    font-size: 16px;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            background-color: #e5b420;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active{
+            background-color: #e5b420;
+        }
+    }
+}
+
+.btn-order-autopark{
+    margin-top: 10px;
+    font-size: 1.625em;
+    display: flex;
+    align-items: center;
+
+    div{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        
+    }
+}
+
+.btn-close-alert{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 60px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 11;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s all ease;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            color: #9d9d9d!important;
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active{
+            color: #9d9d9d!important;
+        }
+    }
+}

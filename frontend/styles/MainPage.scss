@@ -1,0 +1,326 @@
+.main-section{
+    height: 738px;
+    position: relative;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    @media(max-width: 480px){
+        height: 306px;
+    }
+}   
+.backgroud-photo{
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    z-index: -10;
+    img{
+        width: 100%;
+        z-index: -10;
+        @media(max-width: 1320px){
+            width: auto;
+            height: 100%;
+        }
+    }
+    @media(max-width: 1320px){
+        height: 100%;
+        position: absolute;
+    }
+    
+}
+
+
+.main-section-title{
+
+    h1{
+        font-family: 'Russo One', sans-serif;
+        font-size: 5.375em;
+        font-weight: 500;
+        @media(max-width: 960px){
+            font-size: 4.375em;
+        }
+    }
+    h2{
+        font-size: 1.875em;
+        
+        font-weight: 500;
+    }
+    @media(max-width: 1200px){
+        font-size: 11.4px;
+    }
+    @media(max-width: 960px){
+        font-size: 14px;
+    }
+    @media(max-width: 640px){
+        font-size: 11.4px;
+    }
+    @media(max-width: 480px){
+        font-size: 7.3px;
+    }
+}
+.services-section{
+    color: #000;
+    padding: 80px 80px;
+    padding-bottom: 100px;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    align-items: center;
+    
+
+    .section-wrapper{
+        max-width: 1800px;
+    }
+
+    h3{
+        font-size: 2.125em;
+        font-weight: 500;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        z-index: 3;
+        position: relative;
+    }
+
+    @media(max-width: 1200px){
+        font-size: 13px;
+        padding: 80px 30px;
+    }
+    @media(max-width: 960px){
+        padding: 80px 30px;
+        h3{
+            font-size: 21px;
+        }
+    }
+    @media(max-width: 480px){
+        font-size: 11px;
+        padding: 50px 10px;
+        h3{
+            max-width: 300px;
+        }
+    }
+}
+.services-row{
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: repeat(5, 1fr);
+
+    @media(max-width: 1400px){
+        grid-gap: 30px;
+    }
+
+    @media(max-width: 960px){
+        grid-gap: 15px;
+        grid-template-columns: repeat(6, 1fr);
+        
+    }
+    @media(max-width: 640px){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6,100px);
+    }
+    @media(max-width: 480px){
+        grid-template-rows: repeat(6,85px);
+    }
+}
+
+.additional-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+
+    @media(max-width: 960px){
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    @media(max-width: 640px){
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+}
+.additional-item{
+    max-width: 300px;
+    color: #fff;
+    flex: 1;
+    margin-top: 50px;
+    min-width: 195px;
+
+    img{
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    h4{
+        font-size: 22px;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    @media(max-width: 1200px){
+        max-width: 200px;
+    }
+    @media(max-width: 1020px){
+        max-width: 250px;
+    }
+    @media(max-width: 640px){
+        display: flex;
+        max-width:100%;
+
+        h4{
+            font-size: 18px;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        div{
+            margin-left: 30px;
+        }
+    }
+}
+.proccess-row{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    margin-top: 200px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+
+    @media(max-width: 960px){
+        margin-top: 100px;
+        grid-template-columns: 1fr;
+    }
+    @media(min-width: 480px){
+        min-width: 450px;
+    }
+
+}
+.proccess-item{
+    position: relative;
+    max-width: 200px;
+
+
+    @media(max-width: 960px){
+        justify-self: start;
+    }
+    @media(max-width: 480px){
+        justify-self: center;
+        margin-left: 45px;
+    }
+
+
+    img{
+        position: absolute;
+        top: -30px;
+        left: 20px;
+        @media(max-width: 960px){
+            top: 0px;
+            left: 200px;
+            height: 24px;
+            width: 24px;
+        }
+        @media(max-width: 480px){
+            top: 40px;
+            left: -50px;
+        }
+        
+    }
+
+    .proccess-paragraph{
+        z-index: 3;
+        position: relative;
+        margin-top:45px;
+        margin-left: 25px;
+
+        p{
+            font-size: 1.25em;
+            max-width: 200px;
+            height: 50px;
+            @media(max-width: 960px){
+                width: 200px;
+            }
+        }
+    }
+    .backgroud-text{
+        font-size: 120px;
+        top: -15px;
+        left: -20px;
+        @media(max-width: 960px){
+            font-size: 100px!important;
+            top: 0px;
+            left: -10px;
+        }
+    }
+}
+.item-end{
+    @media(max-width: 960px){
+        justify-self: end;
+        img{
+            position: absolute;
+            top: 0px;
+            left: -50px;
+        }
+    }
+    @media(max-width: 480px){
+        justify-self: center;
+        
+        img{
+            position: absolute;
+            top: 40px;
+            left: -50px;
+        }
+    }
+}
+.flaxible-payment{
+    margin-top: 40px;
+    @media(max-width: 480px){
+        margin-left: 65px;
+    }
+    @media(min-width: 1200px){
+        margin-top: 100px;
+    }
+}
+.svg-line{
+    position: absolute;
+    top: -30px;
+    left: 55px;
+    width: 97%;
+    pointer-events: none ;
+
+    @media(max-width: 960px){
+        transform: rotate(90deg);
+        top: 22px;
+        left: -345.5px;
+        width: 130%;
+        height: 100%;
+    }
+
+
+    @media(max-width: 480px){
+        top: 65px;
+        left: -535px;
+        width: 550px;
+    }
+    
+}
+.proccess-wrapper{
+    @media(max-width: 480px){
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.overlay-text{
+    margin-left: 5px;
+    font-weight: 900;
+    font-size: 1.3em;
+}

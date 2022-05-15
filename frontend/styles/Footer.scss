@@ -1,0 +1,115 @@
+.footer{
+    color: #fff;
+    padding: 50px 0;
+    hr{
+        background-color: #252927;
+        color: #252927;
+        border: none;
+        height: 2px;
+        width: 90%;
+        max-width: 1800px;
+    }
+  }
+  .contact-item{
+    text-align: center;
+    img{
+      height: 50px;
+      margin-bottom: 15px;
+    }
+    p{
+      font-size: 1.2em;
+    }
+    @media(max-width: 960px){
+        img{
+            height: 31px;
+          }
+    }
+    @media(max-width: 960px){
+        img{
+            height: 50px;
+          }
+    }
+  }
+
+  .contanct-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 90px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    @media(max-width: 960px){
+        grid-gap: 20px;
+    }
+    @media(max-width: 640px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.footer-links{
+    display: grid;
+    text-align: start;
+    grid-gap: 40px;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 30px;
+    @media(max-width: 960px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: 480px){
+        grid-gap: 10px;
+    }
+    @media(max-width: 360px){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    h2{
+        font-size: 1.1em;
+    }
+
+    ul{
+        padding: 0;
+
+        li{
+            margin: 5px 0;
+        }
+        li a{
+            color: #d3d3d3;
+            transition: all .2s ease;
+        @media (hover: hover) and (pointer: fine) {
+            &:hover{
+                color: $colorHoverA;
+                }
+                &:hover::before{
+                    opacity: 0;
+                }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            &:active{
+                color: $colorHoverA;
+            }
+            &:active::before{
+                opacity: 0;
+            }
+        }
+        }
+    }
+
+}
+.footer-logo{
+    font-size: 1.5em!important;
+    margin-bottom: 15px;
+}
+.footer-phone{
+    font-weight: 700;
+    color:#567c65;
+    margin-top: 10px;
+}
+.footer-whatsup{
+    font-size: 2.5em;
+}
+.footer-block-desktop{
+    @media(max-width: 960px){
+        display: none;
+    }
+}

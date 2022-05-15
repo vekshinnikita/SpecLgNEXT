@@ -1,0 +1,109 @@
+@import 'Headers', 'variables', 'button','MainPage', 'CalcPrice', 'ServicesItem', 'ModalForm','AutoPark', 'CompletedCarousel', 'Footer';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+*{
+  font-family: 'M PLUS 1p', Arial,sans-serif;
+}
+body{
+  font-size: 16px;
+  color: #fff;
+}
+section{
+  background-color: #fff;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+  transition: all .2s ease;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover{
+      color: $colorHoverA;
+      cursor: pointer;
+    }
+  }
+
+@media (hover: none) and (pointer: coarse) {
+  &:active{
+    color: $colorHoverA;
+    cursor: pointer;
+  }
+  }
+}
+
+li{
+    list-style-type: none;
+}
+
+.backgroud-text{
+  font-family: 'Russo One', sans-serif;
+  position: absolute;
+  top: 0.3em;
+  left: 0.23em;
+  font-size: 8em;
+  color: #cdd8d1;
+  pointer-events: none;
+  font-weight: 500;
+  z-index: 0;
+  @media(max-width: 960px){
+    font-size: 50px!important;
+  }
+}
+
+.alert{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 400px;
+  border-radius: 3px ;
+  width: 80%;
+  display: flex;
+  padding: 20px 10px; 
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+  background-color: #f95e51;
+  color: #fff;
+  font-weight: 900;
+}
+
+.alert-anim-enter {
+  opacity: 0;
+}
+.alert-anim-enter-active {
+  opacity: 1;
+  transition: all .4s ease;
+}
+.alert-anim-exit {
+  opacity: 1;
+}
+.alert-anim-exit-active {
+  opacity: 0;
+  transition: all .4s ease;
+}
+.slick-track{
+  display: flex!important;
+  align-items: center;
+}
+.slick-list{
+  overflow: hidden;
+}

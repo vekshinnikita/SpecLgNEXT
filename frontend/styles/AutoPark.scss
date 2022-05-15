@@ -1,0 +1,132 @@
+.section-autopark{
+    @media(max-width: 1200px){
+        padding-bottom: 0;
+    }
+    @media(max-width: 640px){
+        padding-bottom: 80px;
+    }
+}
+.autopark-button-row{
+    display: flex;
+    div{
+        flex: 1;
+    }
+}
+.autopark-button{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #423f2d;
+    padding: 0.9em 1.3em;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.125em;
+    font-weight: 700;
+    flex: 1;
+    z-index: 1;
+}
+.autopark-active{
+    height: 370px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5em;
+    padding-top: 9em;
+    position: relative;
+    @media(max-width: 1200px){
+        padding: 7% 0;
+        padding-bottom: 4%;
+
+    }
+}
+.autopark-photo{
+    flex-basis: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        transition: 2s ease all;
+        width: 100%;
+    }
+}
+.autopark-active-info{
+    flex-basis: 30%;
+    color: #fff;
+    padding: 0 30px;
+    box-sizing: border-box;
+    div{
+        margin-top: 50px;
+    }
+    h4{
+        color: #919291;
+        font-size: 1.2em;
+        font-weight: 900;
+    }
+    h5{
+        font-size: 1.125em;
+        font-weight: 500;
+        margin: 10px 0 25px 0;
+    }
+}
+
+
+.autopark-carousel{
+    width: 100vw;
+    overflow: hidden;
+}
+.autopark-inner-carousel{
+    display: flex;
+    position: relative;
+    gap: 40px;
+    overflow-x: scroll;
+}
+.autopark-carousel-item{
+    min-width: 63vw;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    color: #fff;
+
+    .auto-img-mobile{
+        display: flex;
+        align-items: center;
+        padding-top: 100%;
+        position: relative;
+        width: 100%;
+        img{
+            pointer-events: none;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            max-height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+    h4,h5{
+        pointer-events: none;
+        font-size: 16px;
+        margin: 0;
+    }
+    h4{
+        font-weight: 900;
+        margin-top: 10px;
+    }
+    h5{
+        font-weight: 500;
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+    h3{
+        margin: 0;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    
+}
+#autopark-h3{
+    padding: 0 20px;
+    min-width: 80vw;
+}
