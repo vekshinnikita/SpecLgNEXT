@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', os.environ.get("HOST", "0.0.0.0"), 'backend']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','https://speclg.ru', 'https://www.speclg.ru', os.environ.get("HOST", "0.0.0.0"), 'backend']
 
 
 # Application definition
@@ -215,10 +215,12 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost',
     'http://127.0.0.1',
     'http://0.0.0.0',
+    'https://speclg.ru',
+    'https://www.speclg.ru',
     ('http://'+ os.environ.get("HOST", "0.0.0.0")),
 ]
 
-URL_HOST = 'http://' + os.environ.get("HOST", "127.0.0.1:8000")
+URL_HOST = 'https://' + os.environ.get("HOST", "127.0.0.1:8000")
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
@@ -236,3 +238,5 @@ CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELETY_TASK_SERIALIZER = 'json'
 CELETY_RESULT_SERIALIZER = 'json'
+
+CSRF_TRUSTED_ORIGINS = ['https://speclg.ru','https://www.speclg.ru']
