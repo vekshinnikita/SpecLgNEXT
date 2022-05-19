@@ -193,8 +193,8 @@ export default () => {
                 <li><i className="fa-solid fa-phone"></i> +7-999-209-99-88</li>
             </ul>
             <ul className='header-mobile'>
-                <li><a href="#"><i className="fa-brands fa-whatsapp"></i></a></li>
-                <li><a href="#"><i className="fa-solid fa-phone"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=79992099988&text&app_absent=0"><i className="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="tel:+79992099988"><i className="fa-solid fa-phone"></i></a></li>
                 <li
                     onClick={() => setBurgerMenu(true)}
                 ><i className="fa-solid fa-bars"></i></li>
