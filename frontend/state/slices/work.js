@@ -4,6 +4,7 @@ import { HYDRATE} from 'next-redux-wrapper';
 
 const initialState = {
     listWork: [],
+    listTags: [],
 }
 
 const workSlice = createSlice({
@@ -14,6 +15,10 @@ const workSlice = createSlice({
     getListWork(){},
     setListWork(state, action) {
         state.listWork = action.payload
+    },
+    getWorkTags(){},
+    setWorkTags(state, action) {
+        state.listTags = action.payload
     },
   },
   extraReducers: {
@@ -26,5 +31,5 @@ const workSlice = createSlice({
   }
 })
 
-export const { setListWork, getListWork } = workSlice.actions
+export const { setListWork, getListWork, setWorkTags, getWorkTags } = workSlice.actions
 export default workSlice.reducer

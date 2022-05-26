@@ -4,11 +4,21 @@ from backend.settings import URL_HOST
 from core.models import BasicPost
 
 # Create your models here.
+class WorkTag(models.Model):
+    name = models.CharField('Тэг',max_length=150)
+
+    class Meta:
+        verbose_name = "Тэг"
+        verbose_name_plural = "Тэги"
+
+    def __str__(self):
+        return self.name 
 
 class Work(BasicPost):
     summary = models.TextField('Краткое содержание')
     draft = models.BooleanField("Черновик",default=False)
     date = models.CharField('Месяц и год', max_length=150, null=True)
+    tags = models.ManyToManyField(WorkTag)
 
     def __str__(self):
         return self.title 
@@ -37,6 +47,6 @@ class WorkShots(models.Model):
         img = img.resize((height,width), Image.ANTIALIAS)
         self.image = img.save(self.image.path)
 
-        
+
 
 

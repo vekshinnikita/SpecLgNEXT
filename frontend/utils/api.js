@@ -19,3 +19,29 @@ export const makeOrderAPI = (dict) => {
     .then(response => response.data)
   }
 
+export const getDetailServiceAPI=(slug) => {
+  return axios
+    .get(API_URL + `/services/${slug}`)
+    .then(response => response.data)
+  }
+
+export const getWorkFilterAPI=(tag) => {
+  
+  let filter = ''
+  if (tag){
+    filter = `?tag=${encodeURIComponent(tag)}`
+  }
+
+  
+
+  return axios
+    .get(API_URL + "/work/list"+ filter)
+    .then(response => response.data)
+  }
+
+export const getWorkTagsAPI=(tag) => {
+
+  return axios
+    .get(API_URL + `/work/tags`)
+    .then(response => response.data)
+  }

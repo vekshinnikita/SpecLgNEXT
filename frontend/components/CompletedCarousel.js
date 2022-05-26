@@ -2,8 +2,9 @@ import React, { useRef, useState, useEffect } from 'react'
 import Carousel from 'react-elastic-carousel';
 import ModalSlider from './ModalSlider';
 import { useDispatch, useSelector } from 'react-redux'
-
+import Link from 'next/link'
 import { getListWork } from '../state/slices/work'
+
 
 
 export default function CompletedCarousel(){
@@ -12,6 +13,7 @@ export default function CompletedCarousel(){
     const [modal, setModal] = useState(false)
     const dispatch = useDispatch()
     const list = useSelector(state => state.work.listWork)
+    const tags = useSelector(state => state.work.listTags)
     
     const items = [
           {id: 1, title: 'item #1'},
@@ -38,9 +40,27 @@ export default function CompletedCarousel(){
         <div className="completed-carousel">
             <div className="d-flex flex-column">
                 <h3>Примеры нашей работы</h3>
-                <div className="completed-buttons d-flex flex align-center">
+                <div className="completed-buttons d-flex mt-10 mb-10 align-center">
                     <div className='completed-carousel-button' onClick={() => carousel.slidePrev()}><i className="fa-solid fa-arrow-left"></i></div>
                     <div className='completed-carousel-button' onClick={() => carousel.slideNext()}><i className="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <div className="completed-carousel-tags">
+                        { tags.map((item) => (
+                            <Link key={item.id} href={"/completed?tag="+ item.name}>
+                            <a >
+                                #{item.name}
+                            </a>
+                            </Link>
+                        ))}
+
+                        
+                </div>
+                <div style={{display: 'flex', justifyContent: 'start', marginBottom: '40px'}}>
+                    <Link  href="/completed">
+                        <a class="btn-projects" >
+                            ВСЕ ПРОЕКТЫ
+                        </a>
+                    </Link>
                 </div>
             </div>
             

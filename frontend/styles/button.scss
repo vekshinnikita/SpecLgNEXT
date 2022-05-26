@@ -121,3 +121,29 @@
         }
     }
 }
+.btn-projects{
+    font-weight: 700;
+    width: 80%;
+    border-radius: 25px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .4s;
+    cursor: pointer;
+    padding: 10px 0;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            background-color: #e4ba4c;
+            color: #fff
+        }
+    }
+    
+    @media (hover: none) and (pointer: coarse) {
+        &:active{
+            background-color: #e4ba4c;
+            color: #fff
+        }
+    }
+}

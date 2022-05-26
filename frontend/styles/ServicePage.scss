@@ -1,0 +1,22 @@
+.service-post-section{
+    padding: 130px 0;
+    padding-bottom: 60px;
+    color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .wrapper{
+        max-width: 1200px;
+    }
+
+    .backgroud-text{
+        font-size: 5.5em;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+    }
+}

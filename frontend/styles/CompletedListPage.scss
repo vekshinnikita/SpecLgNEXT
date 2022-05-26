@@ -1,0 +1,50 @@
+.completed-list{
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    color: #000;
+    a{
+        color: #577d66;
+    }
+    h2{
+        font-size: 3em;
+    }
+}
+.wrapper{
+    max-width: 1200px;
+}
+
+.projects-row{
+    position: relative;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    color: #fff;
+    
+
+    .completed-item{
+        height: 200px;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .completed-item-info{
+        h4{
+            font-size: 18px;
+        }
+        p{
+            font-size: 13px;
+        }
+    }
+    .carousel-item-date{
+        font-size: 13px;
+    }
+}
+.project-tags{
+    margin-bottom: 30px;
+    a{
+        font-size: 1.1em;
+        margin-right: 20px;
+        line-height: 2;
+    }
+    
+}

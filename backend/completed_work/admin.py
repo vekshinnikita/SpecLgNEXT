@@ -3,7 +3,7 @@ from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.utils.safestring import mark_safe
 
-from .models import Work, WorkShots
+from .models import Work, WorkShots, WorkTag
 
 # Register your models here.
 
@@ -27,13 +27,13 @@ class MovieShotsInline(admin.TabularInline):
 @admin.register(Work)
 class WorkAdmin(admin.ModelAdmin):
     list_display = ('title',"draft",)
-    list_filter = ('title',)
+    list_filter = ('title','tags')
     inlines = [MovieShotsInline]
     form = WorkAdminForm
     save_on_top = True
     fieldsets = (
         (None, {
-            "fields": ("title", 'slug','date')
+            "fields": ("title", 'slug','date','tags')
         }),
         (None, {
             "fields": ("summary",)
@@ -45,3 +45,7 @@ class WorkAdmin(admin.ModelAdmin):
             "fields": ("draft",)
         }),
     )
+
+@admin.register(WorkTag)
+class WorkTagAdmin(admin.ModelAdmin):
+    list_display = ('name',)

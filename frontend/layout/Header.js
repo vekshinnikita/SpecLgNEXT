@@ -5,9 +5,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion"
 import Grow from "@mui/material/Grow";
 import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
-
-import { getMainServices } from '../state/slices/services'
-import { wrapper } from '../state/store';
+import Links from 'next/link'
 
 
 function Layout(props){
@@ -73,7 +71,7 @@ function DropDownList(props){
             open={open}
             anchorEl={anchorRef.current}
             role={undefined}
-            style={{position: 'absolute',top: 'auto', bottom: '-90%', left: 0,}}
+            style={{position: 'absolute',top: 'auto', bottom: '-90%', left: '100px', marginLeft: "70px"}}
             transition
             disablePortal
             >
@@ -86,7 +84,7 @@ function DropDownList(props){
               <Paper style={{backgroundColor: '#252927'}}>
                 <ul className='dropdown-list'>
                         {list.map((el) => (
-                            <li key={el.id}><a href={`/services/${el.slug}`}>{el.title}</a></li>
+                            <li key={el.id}><Links href={`/services/${el.slug}`}><a >{el.title}</a></Links></li>
                         ))}
                     </ul>
               </Paper>
@@ -146,10 +144,6 @@ export default () => {
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
       };
-      
-    // useEffect(() => {
-    //     dispatch(getMainServices())
-    // }, [])
     
 
     return (
@@ -160,14 +154,16 @@ export default () => {
             style={{ backgroundColor: opacity}}
         >
             <div className="header-logo">
-                <a href="#">СПЕЦЛОГИСТИКА</a>
+                <Links href="/">
+                    <a>СПЕЦЛОГИСТИКА</a>
+                </Links>
             </div>
             <div className="header-logo-mobile"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 100 100" fill="none" m_init="2259300202204070759"> <path d="M65.9707 71.1778C57.0507 71.9778 49.6507 72.3778 43.7707 72.3778C39.8507 72.3778 36.9707 71.4578 35.1307 69.6178C33.2907 67.7778 32.3707 64.8978 32.3707 60.9778V41.7778C32.3707 37.5778 33.3107 34.5378 35.1907 32.6578C37.1107 30.7378 40.1707 29.7778 44.3707 29.7778H65.9707V38.1778H46.7707C44.3707 38.1778 43.1707 39.3778 43.1707 41.7778V60.9778C43.1707 61.8978 43.4307 62.6378 43.9507 63.1978C44.5107 63.7178 45.2107 63.9778 46.0507 63.9778C46.8907 63.9778 47.8107 63.9778 48.8107 63.9778C49.8107 63.9378 50.8507 63.8978 51.9307 63.8578C53.0107 63.8178 54.0907 63.7778 55.1707 63.7378C56.2907 63.6978 57.7107 63.6178 59.4307 63.4978C61.1907 63.3778 63.3707 63.2378 65.9707 63.0778V71.1778Z" fill="white"/> <circle cx="50" cy="50" r="47.5" stroke="white" strokeWidth="5"/> </svg></div>
             <ul>
                 <li 
-                    // ref={anchorRef}
-                    // onMouseEnter={handleToggle}
-                    // onMouseLeave={handleToggle}
+                    ref={anchorRef}
+                    onMouseEnter={handleToggle}
+                    onMouseLeave={handleToggle}
                     className='dropdown-li'
                     aria-controls={open ? "composition-menu" : undefined}
                     aria-expanded={open ? "true" : undefined}
@@ -175,7 +171,7 @@ export default () => {
                     aria-haspopup="true"
                 >
                     <Link to="services" spy={true} smooth={true} offset={-100} duration={500}>Услуги</Link>
-                    {/* <DropDownList setOpen={setOpen} open={open} anchorRef={anchorRef}/> */}
+                    <DropDownList setOpen={setOpen} open={open} anchorRef={anchorRef}/>
                 </li>
                 <li>
                     <Link to="additional" spy={true} smooth={true} offset={-100}  duration={500}>Сервисы</Link>

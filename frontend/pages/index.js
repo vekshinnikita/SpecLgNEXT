@@ -9,11 +9,10 @@ import { CSSTransition } from 'react-transition-group'
 import CompletedCarousel from "../components/CompletedCarousel";
 import { useSelector } from "react-redux";
 import Alert from "../components/Alert";
-import MainLayout from "../layout/MainLayout";
 import { wrapper } from "../state/store";
-import { getListWorkAPI, getMainServicesAPI } from "../utils/api";
+import { getListWorkAPI, getMainServicesAPI, getWorkTagsAPI } from "../utils/api";
 import { setMainServices } from "../state/slices/services";
-import { setListWork } from "../state/slices/work";
+import { setListWork, setWorkTags } from "../state/slices/work";
 
 
 
@@ -75,14 +74,14 @@ export default function MainPage(){
 
 
     return (
-        <MainLayout>
+        <>
             <ModalForm modalForm={modalForm} setModalForm={setModalForm}/>
             <CSSTransition classNames="alert-anim" in={alert.isAlert} timeout={400} unmountOnExit>
                 <Alert />
             </CSSTransition>
             <section id="main" className="main-section">
                 <div className="backgroud-photo">
-                <img src="/static/photo.webp" />
+                    <img src="/static/photo.webp" />
                 </div>
                 <motion.div 
                     className="main-section-title"
@@ -218,7 +217,7 @@ export default function MainPage(){
                 <CompletedCarousel />
             </div>
             </section>
-        </MainLayout>
+        </>
     )
 }
 export const getServerSideProps = wrapper.getServerSideProps(
@@ -232,6 +231,10 @@ export const getServerSideProps = wrapper.getServerSideProps(
             const dataWork = await getListWorkAPI()
 
             store.dispatch(setListWork(dataWork))
+
+            const dataTags = await getWorkTagsAPI()
+
+            store.dispatch(setWorkTags(dataTags))
         }catch (error) {
             console.log(error)
         }

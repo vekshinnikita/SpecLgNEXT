@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY",'django-insecure-_-vblx&-0g#^r_=+mkvo4d!@gdu791i3*w-dr8=bsu(xe*(@7k')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','https://speclg.ru', 'https://www.speclg.ru', os.environ.get("HOST", "0.0.0.0"), 'backend']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','https://speclg.ru', 'https://www.speclg.ru', os.environ.get("HOST", "http://127.0.0.1:8000"), 'backend']
 
 
 # Application definition
@@ -77,7 +77,7 @@ TEMPLATES = [
             ],
         },
     },
-]
+]       
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
@@ -217,10 +217,10 @@ CORS_ORIGIN_WHITELIST = [
     'http://0.0.0.0',
     'https://speclg.ru',
     'https://www.speclg.ru',
-    ('http://'+ os.environ.get("HOST", "0.0.0.0")),
+    (os.environ.get("HOST", "http://127.0.0.1:8000")),
 ]
 
-URL_HOST = 'https://' + os.environ.get("HOST", "127.0.0.1:8000")
+URL_HOST = os.environ.get("HOST", "http://127.0.0.1:8000")
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
