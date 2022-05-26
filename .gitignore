@@ -4,3 +4,4 @@ postgres-data
 node_modules
 env
 .env.db
+/certbot
