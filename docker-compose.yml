@@ -47,8 +47,8 @@ services:
       - media_volume:/usr/src/app/backend/media
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-      - ./robots.txt
-      - ./sitemap.xml
+      - robots:./robots.txt
+      - sitemap:./sitemap.xml
     restart: unless-stopped
     depends_on:
       - backend
@@ -88,4 +88,6 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
+  robots:
+  sitemap:
   
