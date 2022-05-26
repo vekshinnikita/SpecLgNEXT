@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /api
+Host: speclg.ru
+
+
+User-agent: Yandex
+Allow: /
+Disallow: /api
+Host: speclg.ru
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api
+Host: speclg.ru
+
+
+Sitemap: https://speclg.ru/sitemaps/sitemap.xml

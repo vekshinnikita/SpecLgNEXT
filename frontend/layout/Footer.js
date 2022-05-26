@@ -59,13 +59,12 @@ export default () => {
                 <div className="footer-link-item">
                     <h2>ДОКУМЕНТЫ</h2>
                     <ul>
-                        <li><a href="#">Бланк Договор юр-лица</a></li>
-                        <li><a href="#">Бланк Договор физ.лица</a></li>
-                        <li><a href="#">Бланк Опись груза</a></li>
-                        <li><a href="#">Бланк Заявка на перевозку</a></li>
-                        <li><a href="#">Бланк ТТН</a></li>
-                        <li><a href="#">Бланк CMR</a></li>
-                        <li><a href="#">Блок 6</a></li>
+                        <li><a href="https://disk.yandex.ru/i/gyjB62qcnE4Nlw">Бланк Договор юр-лица</a></li>
+                        <li><a href="https://disk.yandex.ru/i/z2etnrropTZ8nQ">Бланк Договор физ.лица</a></li>
+                        {/* <li><a href="">Бланк Опись груза</a></li> */}
+                        <li><a href="https://disk.yandex.ru/i/JkRZXe2TeFRUZg">Бланк Заявка на перевозку</a></li>
+                        <li><a href="https://disk.yandex.ru/i/mu-j_cS8PpjOSg">Бланк ТТН</a></li>
+                        {/* <li><a href="#">Бланк CMR</a></li> */}
                         
                     </ul>
                 </div>
