@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
         <link rel="manifest" href="/manifest.json"/>
         <meta name="msapplication-TileColor" content="#ffffff"/>
-        <title>СПЕЦЛОГИСТИКА</title>
+        <title>Транспортная компания | СПЕЦЛОГИСТИКА</title>
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
         <meta name="theme-color" content="#ffffff"></meta>
         <script defer src="https://kit.fontawesome.com/0173c05275.js" crossOrigin="anonymous"/>
