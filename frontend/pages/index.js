@@ -112,6 +112,24 @@ export default function MainPage(){
                     </div>
                 </div>
             </section>
+
+            <section id="completed-work" className="services-section completed-work" style={{backgroundColor: "#99afa1"}}>
+                <div className="section-wrapper">
+                    <h2 className="backgroud-text" style={{color: "#71917d", lineHeight:'1'}} >ВЫПОЛНЕННЫE <br/>ЗАКАЗЫ</h2>
+                    <CompletedCarousel />
+                </div>
+            </section>
+
+            <section id="autopark" className="services-section section-autopark" style={{backgroundColor: "#252927"}}>
+                <div className="section-wrapper">
+                    <h2 className="backgroud-text" style={{color: '#38372b'}}>АВТОПАРК</h2>
+                    <h3 id='autopark-h3' style={{color: '#fff'}}>Каждый груз индивидуален.<br/>В зависимости от его особенностей, маршрута и сроков доставки мы предложим наиболее подходящий транспорт.</h3>
+                    {process.browser && <AutoPark /> }
+                                
+        
+                </div>
+            </section>
+
             <section id="additional" className="services-section" style={{backgroundColor: "#99afa1"}}>
                 <div className="section-wrapper">
                     <h2 className="backgroud-text" style={{color: '#647c6e'}}>СЕРВИСЫ</h2>
@@ -149,15 +167,7 @@ export default function MainPage(){
                 </div>
             </section>
 
-            <section id="autopark" className="services-section section-autopark" style={{backgroundColor: "#252927"}}>
-                <div className="section-wrapper">
-                    <h2 className="backgroud-text" style={{color: '#38372b'}}>АВТОПАРК</h2>
-                    <h3 id='autopark-h3' style={{color: '#fff'}}>Каждый груз индивидуален.<br/>В зависимости от его особенностей, маршрута и сроков доставки мы предложим наиболее подходящий транспорт.</h3>
-                    {process.browser && <AutoPark /> }
-                                
-        
-                </div>
-            </section>
+            
             <section id="proccess" className="services-section pb-40" >
                 <div className="section-wrapper proccess-wrapper">
                 
@@ -212,12 +222,7 @@ export default function MainPage(){
                     <p className="flaxible-payment">*Для постоянных клиентов возможна гибкая система оплаты!</p>
                 </div>
             </section>
-            <section id="completed-work" className="services-section completed-work" style={{backgroundColor: "#99afa1"}}>
-            <div className="section-wrapper">
-                <h2 className="backgroud-text" style={{color: "#71917d", lineHeight:'1'}} >ВЫПОЛНЕННЫE <br/>ЗАКАЗЫ</h2>
-                <CompletedCarousel />
-            </div>
-            </section>
+            
         </MainLayout>
     )
 }

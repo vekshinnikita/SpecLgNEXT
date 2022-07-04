@@ -120,14 +120,14 @@ function NavigateItems(){
             <Link to="main" data-id="mainNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
             <div className='label-navigate' style={{top: '45px', left: '-90px'}}  id="servicesNav">Услуги</div>
             <Link to="services" data-id="servicesNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-            <div className='label-navigate' style={{top: '87px', left: '-104px'}}  id="additionalNav">Сервисы</div>
-            <Link to="additional" data-id="additionalNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+            <div className='label-navigate' style={{top: '87px', left: '-186px'}}  id="completedNav">Выполненные заказы</div>
+            <Link to="completed-work"  data-id="completedNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
             <div className='label-navigate' style={{top: '130px', left: '-105px'}}  id="autoparkNav">Автопарк</div>
             <Link to="autopark" data-id="autoparkNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-            <div className='label-navigate' style={{top: '172px', left: '-153px'}}  id="proccessNav">Процесс работы</div>
+            <div className='label-navigate' style={{top: '172px', left: '-104px'}}  id="additionalNav">Сервисы</div>
+            <Link to="additional" data-id="additionalNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+            <div className='label-navigate' style={{top: '213px', left: '-153px'}}  id="proccessNav">Процесс работы</div>
             <Link to="proccess" data-id="proccessNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-            <div className='label-navigate' style={{top: '213px', left: '-186px'}}  id="completedNav">Выполненные заказы</div>
-            <Link to="completed-work"  data-id="completedNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
             <div className='label-navigate' style={{top: '255px', left: '-105px'}} id="contactsNav">Контакты</div>
             <Link to="contacts" data-id="contactsNav" spy={true} smooth={true} offset={-100} duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
         </div>
@@ -178,11 +178,11 @@ export default () => {
                     {/* <DropDownList setOpen={setOpen} open={open} anchorRef={anchorRef}/> */}
                 </li>
                 <li>
-                    <Link to="additional" spy={true} smooth={true} offset={-100}  duration={500}>Сервисы</Link>
+                    <Link to="completed-work" spy={true} smooth={true} offset={-100} duration={500}>Выполненные заказы</Link>
                 </li>
                 <li>
-                    <Link to="completed-work" spy={true} smooth={true} offset={-100} duration={500}>Выполненные заказы</Link>
-                    </li>
+                    <Link to="additional" spy={true} smooth={true} offset={-100}  duration={500}>Сервисы</Link>
+                </li>
                 <li>
                     <Link to="contacts" spy={true} smooth={true} offset={-100} duration={500}>Контакты</Link>
                 </li>
