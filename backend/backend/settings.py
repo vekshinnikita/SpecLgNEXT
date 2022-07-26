@@ -217,10 +217,10 @@ CORS_ORIGIN_WHITELIST = [
     'http://0.0.0.0',
     'https://speclg.ru',
     'https://www.speclg.ru',
-    ('http://'+ os.environ.get("HOST", "0.0.0.0")),
+    (os.environ.get("PROTOCOL", "http://")+ os.environ.get("HOST", "0.0.0.0")),
 ]
 
-URL_HOST = 'https://' + os.environ.get("HOST", "127.0.0.1:8000")
+URL_HOST = os.environ.get("PROTOCOL", "http://")+ os.environ.get("HOST", "0.0.0.0")
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")

@@ -32,6 +32,11 @@ export default function CompletedCarousel(){
         dispatch(getListWork())
     },[])
 
+    const onImgLoad = () => {
+
+        console.log('Hello')
+    }
+
     return(
         <>
         <ModalSlider modal={modal} setModal={setModal} />
@@ -47,12 +52,20 @@ export default function CompletedCarousel(){
 
             <Carousel itemPadding={[40, 5]} ref={ref => setCarousel(ref)} breakPoints={breakPoints}>
                 {list.map(item => (
-                    <div className="completed-item" key={item.id} onClick={() => setModal(item.id)}>
+                    <div 
+                        className="completed-item" 
+                        key={item.id} 
+                        onClick={() => setModal(item.id)}
+                        style={{
+                            backgroundImage: `url(${item.shots[0].url_image})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
+                        >
                         <div className="carousel-item-date">
                             {item.date}
                         </div>
-                        <img src={item.shots[0].url_image} />
-                        
                         <div className="completed-item-info">
                             <h4>{item.title}</h4>
                             <p>{item.summary}</p>
