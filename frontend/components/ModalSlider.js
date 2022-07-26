@@ -32,7 +32,7 @@ export default function ModalSlider(props){
     return(
         <>
             <div className={props.modal ? 'overlay overlayActive' : 'overlay'}></div>
-            <div className={props.modal ? "btn-close btn-close-active" : "btn-close "} onClick={() => props.setModal(false)} ><i className="fa-solid fa-x"></i></div>
+            <div className={props.modal ? "btn-white btn-close  btn-close-active" : "btn-white btn-close"} onClick={() => props.setModal(false)} ><i className="fa-solid fa-x"></i></div>
             <CSSTransition classNames="alert-anim" in={isModal} timeout={400} unmountOnExit>
                 <div className={props.modal ? "modal-form-wrapper modal-form-wrapper-active" : "modal-form-wrapper"} onClick={() => props.setModal(false)}>
                     <div className="modal-slider-button button-left button" onClick={(e) => {carousel.slickPrev(); e.stopPropagation()}}>
@@ -41,12 +41,23 @@ export default function ModalSlider(props){
                         </div>
                     </div>
                         <div className="modal-slider" onClick={(e) => e.stopPropagation()}>
-                            <Slider  {...settings} ref={ref => setCarousel(ref)}>
+                            
+                            <Slider  {...settings} ref={ref => setCarousel(ref)} >
                                 {shots.map(item => (
-                                    
-                                    <img key={item.id} className="modal-slider-item" src={item.url_image}/>
+                                    <div className="modal-slider-wrap" >
+                                        <div className="modal-slider-item" 
+                                            style={{
+                                                backgroundImage: `url(${item.url_image})`,
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundSize: 'contain',
+                                                backgroundPosition: 'center',
+                                            }}>
+
+                                        </div>
+                                    </div>
                                 ))}
                             </Slider>
+
                         </div>
                     <div className="modal-slider-button button-right button" onClick={(e) => {carousel.slickNext(); e.stopPropagation()}}>
                             <div>

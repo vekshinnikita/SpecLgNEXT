@@ -164,9 +164,15 @@
         width: 100vw;
     }
 }
+.modal-slider-wrap{
+
+    height: 100vh;
+    position: relative;
+    
+}
 .modal-slider-item{
-    width: 100%;
-    cursor: pointer;
+    height: 100%;
+    
 }
 .modal-slider-button{
     cursor: pointer;
