@@ -3,7 +3,9 @@ import { HYDRATE} from 'next-redux-wrapper';
 
 
 const initialState = {
-    listWork: [],
+    listWork: [{
+      url_image: '',
+    }],
 }
 
 const workSlice = createSlice({
