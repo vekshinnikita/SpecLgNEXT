@@ -44,6 +44,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - static_volume:/usr/src/app/backend/static
       - media_volume:/usr/src/app/backend/media
@@ -86,6 +87,20 @@ services:
     depends_on:
       - nginx
   
+  bot:
+    build:
+      context: ./TelegramBotVasya
+      dockerfile: Dockerfile
+    command: python -m main
+    restart: always
+
+  userbot:
+    build:
+      context: ./TelegramBotVasya
+      dockerfile: DockerfilePyrogram
+    command: python -m user_bot
+    restart: always
+    
 volumes:
   postgres_data:
   static_volume:
