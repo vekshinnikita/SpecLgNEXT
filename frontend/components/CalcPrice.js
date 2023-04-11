@@ -89,7 +89,7 @@ export default function CalcPrice() {
             </div>
             <div className="d-flex">
                 <div style={{marginRight: "7.5px"}} className="castom-input flex weigh-input">
-                    <TextField placeholder="Вес" className="inputDiv" value={values.weigh} variant="standard" name="weigh" onChange={handleChange} focused={false}/>
+                    <TextField placeholder="Вес" className="inputDiv" value={values.weight} variant="standard" name="weight" onChange={handleChange} focused={false}/>
                 </div>
                 <div style={{marginLeft: "7.5px"}} className="castom-input flex volume-input">
                     <TextField placeholder="Объём" className="inputDiv" value={values.volume} variant="standard" name="volume" onChange={handleChange} focused={false}/>
