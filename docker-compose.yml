@@ -3,96 +3,96 @@ version: '3.7'
 
 services:
 
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    env_file:
-      - ./backend/.env.dev
-    volumes:
-      - static_volume:/usr/src/app/backend/static
-      - media_volume:/usr/src/app/backend/media
-    expose:
-      - 8000
-    restart: unless-stopped
-    depends_on:
-      - db
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   env_file:
+  #     - ./backend/.env.dev
+  #   volumes:
+  #     - static_volume:/usr/src/app/backend/static
+  #     - media_volume:/usr/src/app/backend/media
+  #   expose:
+  #     - 8000
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - db
 
-  db:
-    image: postgres:alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.db
+  # db:
+  #   image: postgres:alpine
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data/
+  #   env_file:
+  #     - ./.env.db
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    environment:
-      - NODE_ENV=dev
-    expose:
-      - 3000
-    restart: unless-stopped
-    command: npm run start
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - NODE_ENV=dev
+  #   expose:
+  #     - 3000
+  #   restart: unless-stopped
+  #   command: npm run start
+  #   depends_on:
+  #     - backend
 
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - static_volume:/usr/src/app/backend/static
-      - media_volume:/usr/src/app/backend/media
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-      - ./robots.txt:/robots
-      - ./sitemap.xml:/sitemap
-    restart: unless-stopped
-    depends_on:
-      - backend
-      - frontend
-    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+  # nginx:
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - static_volume:/usr/src/app/backend/static
+  #     - media_volume:/usr/src/app/backend/media
+  #     - ./certbot/conf:/etc/letsencrypt
+  #     - ./certbot/www:/var/www/certbot
+  #     - ./robots.txt:/robots
+  #     - ./sitemap.xml:/sitemap
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - backend
+  #     - frontend
+  #   command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   
-  redis:
-    image: "redis:alpine"
-    expose:
-      - 6379
+  # redis:
+  #   image: "redis:alpine"
+  #   expose:
+  #     - 6379
 
-  celery:
-    build:
-      context: ./backend
-      dockerfile: DockerfileCelery
-    restart: always
-    command: celery -A send_mail worker -l info
-    env_file:
-      - ./backend/.env.dev   
+  # celery:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: DockerfileCelery
+  #   restart: always
+  #   command: celery -A send_mail worker -l info
+  #   env_file:
+  #     - ./backend/.env.dev   
   
-    depends_on:
-      - db
-      - redis
-      - backend
+  #   depends_on:
+  #     - db
+  #     - redis
+  #     - backend
 
-  certbot:
-    image: certbot/certbot
-    restart: unless-stopped
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    depends_on:
-      - nginx
+  # certbot:
+  #   image: certbot/certbot
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./certbot/conf:/etc/letsencrypt
+  #     - ./certbot/www:/var/www/certbot
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+  #   depends_on:
+  #     - nginx
   
-  bot:
-    build:
-      context: ./TelegramBotVasya
-      dockerfile: Dockerfile
-    command: python -m main
-    restart: always
+  # bot:
+  #   build:
+  #     context: ./TelegramBotVasya
+  #     dockerfile: Dockerfile
+  #   command: python -m main
+  #   restart: always
 
   userbot:
     build:
@@ -101,8 +101,8 @@ services:
     command: python -m user_bot
     restart: always
     
-volumes:
-  postgres_data:
-  static_volume:
-  media_volume:
+# volumes:
+#   postgres_data:
+#   static_volume:
+#   media_volume:
   

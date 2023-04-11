@@ -14,6 +14,7 @@ session_maker = get_session_maker(db_engine)
 
 @app.on_message()
 async def hello(client, message: Message):
+    print('hello')
     if not message.outgoing:
         me = await app.get_users('me')
         with session_maker() as session:
