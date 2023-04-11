@@ -36,5 +36,4 @@ async def hello(client, message: Message):
                     (title, date, msg) = get_formated_text(message, keywords)
                     await send_message_from_bot(me.id, title, date, msg)
 
-app.start()
-idle()
+app.run()
