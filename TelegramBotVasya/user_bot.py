@@ -36,4 +36,9 @@ async def hello(client, message: Message):
                     (title, date, msg) = get_formated_text(message, keywords)
                     await send_message_from_bot(me.id, title, date, msg)
 
-app.run()
+if __name__=='__main__':
+    try:
+        app.run()
+    except Exception as inst:
+        print(type(inst)) 
+        
