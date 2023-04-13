@@ -7,6 +7,7 @@ async def user_make_mailing(chat_ids: List[int], message: str) -> bool:
     async with app:
         try:
             for chat_id in chat_ids:
+                print(f'{chat_id}: {message}')
                 await app.send_message(chat_id=chat_id, text=message)
             return True
         except:
